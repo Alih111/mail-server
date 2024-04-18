@@ -29,7 +29,7 @@ class GUI():
 
     def show_mail(self, error_msg):
         error_window = tk.Tk()
-        error_window.title("Error")
+        error_window.title("mail")
         error_window.geometry("600x300")
         error_label = tk.Label(error_window, text=error_msg, foreground="blue", font=("Arial", 12))
         error_label.pack(padx=20, pady=20)
@@ -127,7 +127,6 @@ class GUI():
         # show screen
         self.root.mainloop()
     def getatt(self):
-        self.firstScreen()
         if None in (self.email, self.password, self.to, self.subject, self.msg):
             return None
         if not self.validate_email(self.email):
@@ -136,7 +135,6 @@ class GUI():
             return None
         return self.email,self.password,self.to,self.subject,self.msg
     def getEmailAndpass(self):
-        self.firstScreen()
         if None in (self.email, self.password):
             return None
         return self.email,self.password
